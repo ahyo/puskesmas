@@ -4,8 +4,6 @@ Pusat Layanan Kesehatan Masyarakat
 
 #
 
-```
-Backend : API REST
-Frontend : Web Client
-Mobile : Mobile Apps
-```
+- [ ] Backend: API REST
+- [ ] Frontend: Web Client
+- [ ] Mobile: Mobile Apps
