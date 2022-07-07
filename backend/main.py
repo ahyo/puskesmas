@@ -14,17 +14,17 @@ def index():
 def reg_pasien():
     _json = request.json
     _no_ktp = _json['no_ktp']
-	_nama = _json['nama']
+    _nama = _json['nama']
     _alamat = _json['alamat']
-	_password = _json['password']
+    _password = _json['password']
     if _no_ktp and _nama and _alamat and _password and request.method == 'POST':
         _hash_password = generate_password_hash(_password)
         id = mongo.db.pasien.insert({'no_ktp': _no_ktp, 'nama': _nama, 'alamat': _alamat, 'password': _hash_password})
-        resp = jsonify({'status':1,'message':'Pendaftaran berhasil')
-		resp.status_code = 200
-		return resp
-	else:
-		return not_found()
+        resp = jsonify({'status':1,'message':'Pendaftaran berhasil'})
+        resp.status_code = 200
+        return resp
+    else:
+        return not_found()
 
 @app.route('/add', methods=['POST'])
 def add_user():
