@@ -1,8 +1,11 @@
 from .movie import MoviesApi, MovieApi
-from .auth import SignupApi, LoginApi
+from .auth import LoginPasien, SignupApi, LoginApi, DaftarPasien
 from .reset_password import ForgotPassword, ResetPassword
 
 def initialize_routes(api):
+    api.add_resource(DaftarPasien, '/pasien/register')
+    api.add_resource(LoginPasien, '/pasien/login')
+
     api.add_resource(MoviesApi, '/api/movies')
     api.add_resource(MovieApi, '/api/movies/<id>')
 

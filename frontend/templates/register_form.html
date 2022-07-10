@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% from 'bootstrap5/form.html' import render_form,
+render_field, render_form_row %} {% block content %}
+
+<h2>Form Pendaftaran</h2>
+
+<form method="post">
+  {{ form.csrf_token }} {{ render_field(form.no_ktp) }} {{
+  render_field(form.nama) }} {{ render_field(form.alamat) }} {{
+  render_field(form.password) }} {{ render_field(form.submit) }}
+</form>
+{% endblock %}

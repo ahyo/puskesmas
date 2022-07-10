@@ -1,3 +1,5 @@
+class NoKtpExists(Exception):
+    pass
 class InternalServerError(Exception):
     pass
 
@@ -29,6 +31,10 @@ class BadTokenError(Exception):
     pass
 
 errors = {
+    "NoKtpExists": {
+        "message": "No.KTP sudah terdaftar",
+        "status": 400
+    },
     "InternalServerError": {
         "message": "Something went wrong",
         "status": 500
