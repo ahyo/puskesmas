@@ -133,6 +133,12 @@ def pendaftaran():
         form=form,
     )    
 
+@app.route("/antrian")
+def antrian():
+    return render_template(
+        'antrian.html'
+    ) 
+
 @app.route("/logout")
 def logout():
     session['token'] = False
