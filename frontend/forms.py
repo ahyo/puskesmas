@@ -36,9 +36,20 @@ class RegisterForm(FlaskForm):
     submit = SubmitField()
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(1, 20)])
+    username = StringField('Username', validators=[DataRequired(), Length(1, 50)])
     password = PasswordField('Password', validators=[DataRequired(), Length(1, 150)])
     submit = SubmitField()
+
+class PoliForm(FlaskForm):
+    nama = StringField('Nama Poli', validators=[DataRequired(), Length(1, 50)])
+    submit = SubmitField()    
+
+class PendaftaranForm(FlaskForm):
+    nomor = StringField('Nomor Pasien', validators=[DataRequired(), Length(1, 50)])
+    nama = StringField('Nama Pasien', validators=[DataRequired(), Length(1, 50)])
+    alamat = StringField('Alamat', validators=[DataRequired(), Length(1, 50)])
+    poli = StringField('Poli Yang dituju', validators=[DataRequired(), Length(1, 50)])
+    submit = SubmitField()    
 
 class HelloForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(1, 20)])

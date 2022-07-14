@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% from 'bootstrap5/table.html' import render_table %}
+{% block content %}
+<h2>Daftar Poli</h2>
+
+{{
+render_table(data,titles=titles,show_actions=True,new_url='/poli-add',edit_url='/poli-update')
+}} {% endblock %}

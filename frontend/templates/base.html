@@ -40,9 +40,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            {{ render_nav_item('index', 'Home', use_li=True) }} {{
-            render_nav_item('register_form', 'Register', use_li=True) }} {{
-            render_nav_item('login_form', 'Login', use_li=True) }}
+            {{ render_nav_item('index', 'Antrian', use_li=True) }} {% if
+            session['token'] %} {{ render_nav_item('polis', 'Poli', use_li=True)
+            }} {{ render_nav_item('pendaftaran', 'Pendaftaran', use_li=True) }}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('logout')}}">Logout</a>
+            </li>
+            {% else %} {{ render_nav_item('login_form', 'Login', use_li=True) }}
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -56,11 +61,10 @@
     <footer class="text-center">
       {% block footer %}
       <small>
-        &copy; 2022–
+        &copy;
         <script>
           document.write(new Date().getFullYear());
         </script>
-        <a href="https://github.com/ahyo">Ahyo Haryanto</a>
       </small>
       {% endblock %}
     </footer>
