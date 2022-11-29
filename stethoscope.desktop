@@ -1,0 +1,9 @@
+[Desktop Entry]
+   Encoding=UTF-8
+   Name=Digital Stetoskop
+   Comment=Digital Stetoskop
+   Exec=/usr/bin/python3 /home/pi/puskesmas/stetoskop/app.py
+   Icon=/home/pi/puskesmas/stethoscope-icon.png
+   Terminal=false
+   Type=Application
+   Categories=Application;Development;

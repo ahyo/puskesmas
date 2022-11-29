@@ -1,0 +1,57 @@
+{% extends 'public.html' %} {% block content %}
+
+<div class="card-group">
+  {% if not data %}
+  <div class="card card-stats">
+    <div class="card-body btn">
+      <div class="row">
+        <div class="col">
+          <h1 class="card-title text-uppercase text-muted mb-0">
+            Daftar Antrian
+          </h1>
+          <span style="font-size: 120px" class="font-weight-bold mb-0"
+            >0000</span
+          >
+        </div>
+        <div class="col-auto">
+          <div
+            class="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
+          >
+            <i class="ni ni-active-40"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% for antrian in data:%}
+  <div class="card card-stats">
+    <div class="card-body btn">
+      <div class="row">
+        <div class="col">
+          <h1
+            class="card-title text-uppercase text-muted mb-0"
+            id="{{antrian['_id']}}_nama"
+          >
+            {{ antrian["nama"] }}
+          </h1>
+          <span
+            style="font-size: 120px"
+            class="font-weight-bold mb-0"
+            id="{{antrian['_id']}}_antrian"
+            >{{ antrian["antrian"] }}</span
+          >
+        </div>
+        <div class="col-auto">
+          <div
+            class="icon icon-shape bg-gradient-red text-white rounded-circle shadow"
+          >
+            <i class="ni ni-active-40"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

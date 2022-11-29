@@ -1,0 +1,149 @@
+{% from 'bootstrap5/utils.html' import render_messages %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Puskesmas Application</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
+      integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function () {
+        setInterval(timer, 1000);
+        setInterval(refresh, 1000 * 60 * 60);
+        const ws = new WebSocket("ws://localhost:8000/ws");
+        ws.onmessage = function (event) {
+          const data = JSON.parse(event.data);
+          data.forEach(function (item, index) {
+            const _id = item["_id"];
+            const nama = item["nama"];
+            const antrian = item["antrian"];
+            $("#" + _id + "_nama").html(nama);
+            $("#" + _id + "_antrian").html(antrian);
+          });
+        };
+      });
+
+      function refresh() {
+        window.location.reload();
+      }
+
+      function timer() {
+        document.getElementById("time").innerHTML = formatAMPM();
+      }
+      function formatAMPM() {
+        var d = new Date(),
+          seconds =
+            d.getSeconds().toString().length == 1
+              ? "0" + d.getSeconds()
+              : d.getSeconds(),
+          minutes =
+            d.getMinutes().toString().length == 1
+              ? "0" + d.getMinutes()
+              : d.getMinutes(),
+          hours =
+            d.getHours().toString().length == 1
+              ? "0" + d.getHours()
+              : d.getHours(),
+          ampm = d.getHours() >= 12 ? "pm" : "am",
+          months = [
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember",
+          ],
+          days = [
+            "Minggu",
+            "Senin",
+            "Selasa",
+            "Rabu",
+            "Kamis",
+            "Jumat",
+            "Sabtu",
+          ];
+        return (
+          days[d.getDay()] +
+          ", " +
+          d.getDate() +
+          " " +
+          months[d.getMonth()] +
+          " " +
+          d.getFullYear() +
+          " [ " +
+          hours +
+          ":" +
+          minutes +
+          ":" +
+          seconds +
+          " ]"
+        );
+      }
+    </script>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    {{ bootstrap.load_css() }}
+    <style>
+      body {
+        background-color: #000;
+      }
+      pre {
+        background: #ddd;
+        padding: 10px;
+      }
+      h2 {
+        margin-top: 20px;
+      }
+      footer {
+        margin: 20px;
+      }
+      .kuning {
+        color: #deba04 !important;
+      }
+      .card {
+        background-color: #000 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row bg-dark bg-gradient" style="padding: 20px">
+      <div class="col-md-6">
+        <h1 class="kuning">PUSKESMAS KAYU MANIS</h1>
+      </div>
+      <div class="col-md-6">
+        <h1 id="time" class="kuning text-sm-end">Time</h1>
+      </div>
+    </div>
+
+    {{ render_messages(container=False, dismissible=True) }} {% block content
+    %}{% endblock %}
+
+    <footer class="text-center">
+      {% block footer %}
+      <span style="font-size: 50px; color: #fff"
+        ><marquee>Selamat datang di UPDT Puskesmas Kayumanis</marquee></span
+      >
+
+      {% endblock %}
+    </footer>
+
+    {{ bootstrap.load_js() }}
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% from 'bootstrap5/table.html' import render_table %}
+{% from 'bootstrap5/utils.html' import render_icon %} {% block content %} {{
+render_table(messages, titles,model=Poli,
+table_classes='table-striped',show_actions=True,new_url='/poli-add',view_url=('poli_view',
+[('id', ':_id')]), edit_url=('poli_edit', [('id', ':_id')]),
+header_classes='thead-dark', caption='List Poli') }} {% endblock %}

@@ -1,0 +1,49 @@
+import requests, json
+
+def api_post(path='',data={},token=''):
+    #url = "http://8.215.26.98:8000/"+path
+    url = "http://127.0.0.1:8000/"+path
+    body = json.dumps(data)
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer '+token
+    }
+    response = requests.post(url, headers=headers, data=body, verify=False)
+    return response.json()
+
+def api_file(path='',files=[],token=''):
+    #url = "http://8.215.26.98:8000/"+path
+    url = "http://127.0.0.1:8000/"+path
+    #body = json.dumps(data)
+    headers = {
+        #'Content-Type': 'application/x-www-form-urlencoded',
+        #'Accept': 'application/json',
+        'Authorization': 'Bearer '+token
+    }
+    response = requests.post(url, headers=headers,files=files, verify=False)
+    return response.json()
+
+def api_get(path='',data={},token=''):
+    #url = "http://8.215.26.98:8000/"+path
+    url = "http://127.0.0.1:8000/"+path
+    body = json.dumps(data)
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer '+token
+    }
+    response = requests.get(url, headers=headers,data=body, verify=False)
+    return response.json()
+
+def api_put(path='',data={},token=''):
+    #url = "http://8.215.26.98:8000/"+path
+    url = "http://127.0.0.1:8000/"+path
+    body = json.dumps(data)
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer '+token
+    }
+    response = requests.put(url, headers=headers,data=body, verify=False)
+    return response.json()

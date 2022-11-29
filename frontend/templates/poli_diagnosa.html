@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% from 'bootstrap5/utils.html' import render_icon %}
+{% from 'bootstrap5/form.html' import render_form, render_field, render_form_row
+%} {% block content %}
+
+<h4>Data Antrian</h4>
+<table class="table table-striped">
+  <tr>
+    <td>No.MR: {{kunjungan['no_mr']}}</td>
+    <td>Nama KK: {{kunjungan['nama_kk']}}</td>
+    <td>Alamat: {{kunjungan['alamat']}}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <audio controls autoplay>
+        <source
+          src="{{ url_for('static', filename=bell) }}"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+      <audio controls autoplay>
+        <source src="{{ url_for('static', filename=mp3) }}" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <p>
+        Klik tombol Play {{render_icon('play')}} untuk melakukan panggilan
+        antrian
+      </p>
+    </td>
+    <td>Nomor Antrian: {{kunjungan['nomor']}}</td>
+  </tr>
+</table>
+
+<h4>Data Pemeriksaan</h4>
+<form method="post" enctype="multipart/form-data">
+  {{ form.csrf_token }} {{ render_field(form.no_mr) }} {{
+  render_field(form.poli_id) }} {{ render_field(form.kunjungan_id) }} {{
+  render_field(form.diagnosa) }} 
+  <div class="row">
+    <div class="col-md-6">{{ render_field(form.submit) }}</div>
+    <div class="col-md-6 text-sm-end">
+      <a
+        href="{{url_for('poli_view',id=form.poli_id.data)}}"
+        class="btn btn-info"
+        >{{render_icon('list')}} Kembali ke daftar antrian</a
+      >
+    </div>
+  </div>
+</form>
+
+{% endblock %}

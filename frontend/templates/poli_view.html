@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% from 'bootstrap5/utils.html' import render_icon %}
+{% block content %}
+
+<h3>Daftar Antrian {{poli["nama"]}}</h3>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nomor</th>
+      <th>Tanggal</th>
+      <th>Jam</th>
+      <th>No.MR</th>
+      <th>Nama KK</th>
+      <th>Alamat</th>
+      <th>Proses</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if kunjungan %} {% for antri in kunjungan: %}
+    <tr>
+      <td>{{antri['nomor']}}</td>
+      <td>{{antri['tanggal']}}</td>
+      <td>{{antri['jam']}}</td>
+      <td>{{antri['no_mr']}}</td>
+      <td>{{antri['nama_kk']}}</td>
+      <td>{{antri['alamat']}}</td>
+      <td>
+        <a
+          href="{{url_for('poli_diagnosa',poli_id=poli['_id'],kunjungan_id=antri['_id'])}}"
+          >{{render_icon('send')}}</a
+        >
+      </td>
+    </tr>
+    {% endfor %} {% else %}
+    <tr>
+      <td colspan="7">Belum ada data</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+{% endblock %}

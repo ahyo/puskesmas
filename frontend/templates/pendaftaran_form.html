@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% from 'bootstrap5/form.html' import render_form,
+render_field, render_form_row %} {% block content %}
+
+<h2>Pendaftaran Pasien</h2>
+
+<form method="post">
+  {{ form.csrf_token }} {{ render_field(form.tanggal) }} {{
+  render_field(form.nama) }} {{ render_field(form.alamat) }} {{
+  render_field(form.poli) }} {{ render_field(form.submit) }}
+</form>
+{% endblock %}

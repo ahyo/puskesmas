@@ -1,0 +1,7 @@
+/stetoskop/sounds/*
+__pycache__
+/backend/ml/digital_stetoskop.h5
+/frontend/myApi.py
+/mobile/myApi.py
+/stetoskop/digital_stetoskop.h5
+/backend/digital_stetoskop.h5

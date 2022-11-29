@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% from 'bootstrap5/form.html' import render_form,
+render_field, render_form_row %} {% block content %}
+
+{% if update %}
+    <h2>Update Data Pasien</h2>
+{% else %}
+  <h2>Tambah Data Pasien</h2>
+{% endif %}
+
+
+<form method="post">
+  {{ form.csrf_token }} {{ render_field(form.nomor) }} {{
+  render_field(form.no_ktp) }} {{ render_field(form.nama) }} {{
+  render_field(form.alamat) }} {{ render_field(form.tempat_lahir) }} {{
+  render_field(form.tanggal_lahir) }} {{ render_field(form.jenis_kelamin) }} 
+  {{ render_field(form.add_daftar) }} 
+  <div class="row">
+    <div class="col-md-6">{{ render_field(form.submit) }}</div>
+    <div class="col-md-6">
+      <a class="btn btn-info btn-sm float-end" href="{{ url_for('pasien') }}"
+        >List Pasien</a
+      >
+    </div>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% from 'bootstrap5/table.html' import render_table %}
+{% from 'bootstrap5/utils.html' import render_icon %} {% block content %}
+
+<table class="table">
+  <caption>
+    List Pasien
+  </caption>
+
+  <thead>
+    <tr>
+      {% for title in titles %}
+      <th scope="col">{{title}}</th>
+      {% endfor %}
+
+      <th scope="col">
+        <a href="/pasien-add"
+          >{{render_icon('plus-circle-fill',color='primary')}}</a
+        >
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+
+      <td>{{row['nomor']}}</td>
+
+      <td>{{row['nama']}}</td>
+
+      <td>{{row['alamat']}}</td>
+
+      <td>{{row['tempat_lahir']}}</td>
+
+      <td>
+        <a href="{{url_for('pasien_update',id=row['_id'])}}"
+          >{{render_icon('pencil-fill',color='primary')}}</a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

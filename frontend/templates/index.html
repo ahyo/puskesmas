@@ -1,0 +1,50 @@
+{% extends 'public.html' %} {% from 'bootstrap5/utils.html' import render_icon
+%} {% block content %}
+
+<div class="card-group">
+  {% if not data %}
+  <div class="card card-stats">
+    <div class="card-body btn">
+      <div class="row">
+        <div class="col">
+          <a href="{{url_for('poli_new')}}" style="text-decoration: none">
+            <h1 class="card-title text-uppercase mb-0">Daftar Antrian</h1>
+            <span style="font-size: 120px" class="font-weight-bold mb-0"
+              >0000</span
+            ></a
+          >
+        </div>
+        <div class="col-auto">{{render_icon('list')}}</div>
+      </div>
+    </div>
+  </div>
+  {% endif %} {% for antrian in data:%}
+  <div class="card card-stats" style="border: 1px solid #fff">
+    <div class="card-body btn">
+      <div class="row bg-light bg-gradient">
+        <a
+          href="{{url_for('poli_view',id=antrian['_id'])}}"
+          style="text-decoration: none"
+        >
+          <h1
+            class="card-title text-uppercase mb-0"
+            id="{{antrian['_id']}}_nama"
+          >
+            {{ antrian["nama"] }}
+          </h1></a
+        >
+      </div>
+      <div class="row kuning">
+        <span
+          style="font-size: 120px"
+          class="font-weight-bold mb-0"
+          id="{{antrian['_id']}}_antrian"
+          >{{ antrian["antrian"] }}</span
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

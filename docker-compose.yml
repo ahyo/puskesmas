@@ -1,0 +1,70 @@
+version: '3'
+services:
+
+  backend:
+    build: ./backend
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    #working_dir: /Users/mac/Projects/puskesmas/backend
+    container_name: backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - 8000:8000
+    restart: on-failure  
+    depends_on:
+      - mongodb
+    networks:
+      - frontend
+      - backend
+    expose:
+      - 8000  
+
+  mongodb:
+    image: mongo:4.0.8
+    container_name: mongodb
+    restart: unless-stopped
+    command: mongod --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: puskesmas
+      MONGO_INITDB_ROOT_PASSWORD: puskesmba
+      MONGO_INITDB_DATABASE: puskesmas
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    volumes:
+      - ./backend/mongo-initdb.js:/docker-entrypoint-initdb.d/initdb.js:ro
+      - mongodbdata:/data/db
+    networks:
+      - backend
+    ports:
+      - 27017:27017  
+    expose:
+      - 27017  
+
+  frontend:
+    build: ./frontend
+    #command: python app.py 
+    #working_dir: /Users/mac/Projects/puskesmas/frontend/
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:8080
+    restart: on-failure  
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  mongodbdata:
+    driver: local
+  # appdata:
+  #   driver: local
+  # nginxdata:
+  #   driver: local

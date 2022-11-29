@@ -1,0 +1,1400 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : Docker-local
+ Source Server Type    : MongoDB
+ Source Server Version : 40008 (4.0.8)
+ Source Host           : localhost:27017
+ Source Schema         : puskesmas
+
+ Target Server Type    : MongoDB
+ Target Server Version : 40008 (4.0.8)
+ File Encoding         : 65001
+
+ Date: 20/11/2022 11:19:07
+*/
+
+
+// ----------------------------
+// Collection structure for Kunjungan
+// ----------------------------
+db.getCollection("Kunjungan").drop();
+db.createCollection("Kunjungan");
+
+// ----------------------------
+// Documents of Kunjungan
+// ----------------------------
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f23a3d92934cdb2400c9e"),
+    nomor: "UM-001",
+    "no_mr": "00001",
+    "nama_kk": "Jenny Raiza",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:23:47",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f23b1d92934cdb2400c9f"),
+    nomor: "UM-002",
+    "no_mr": "00002",
+    "nama_kk": "Yuliyanah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:24:01",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f23c8d92934cdb2400ca0"),
+    nomor: "UM-003",
+    "no_mr": "00003",
+    "nama_kk": "Arni",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:24:24",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2481d92934cdb2400ca5"),
+    nomor: "UM-004",
+    "no_mr": "00004",
+    "nama_kk": "Talita",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:27:29",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f26aed92934cdb2400ca7"),
+    nomor: "UM-005",
+    "no_mr": "00005",
+    "nama_kk": "Ratna",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:36:46",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f271cd92934cdb2400ca9"),
+    nomor: "UM-006",
+    "no_mr": "00006",
+    "nama_kk": "M. Raihan",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:38:36",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f27c8d92934cdb2400cab"),
+    nomor: "UM-007",
+    "no_mr": "00007",
+    "nama_kk": "Yanti",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:41:28",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f28ead92934cdb2400cad"),
+    nomor: "UM-008",
+    "no_mr": "00008",
+    "nama_kk": "Agus",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:46:18",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2a5dd92934cdb2400caf"),
+    nomor: "UM-009",
+    "no_mr": "00009",
+    "nama_kk": "Sadiyah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:52:29",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2b78d92934cdb2400cb3"),
+    nomor: "UM-010",
+    "no_mr": "00010",
+    "nama_kk": "Latif",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:57:12",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2b83d92934cdb2400cb4"),
+    nomor: "UM-011",
+    "no_mr": "00011",
+    "nama_kk": "Hasby",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:57:23",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2b8ed92934cdb2400cb5"),
+    nomor: "UM-012",
+    "no_mr": "00012",
+    "nama_kk": "Romanah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "01:57:34",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2e18d92934cdb2400cb8"),
+    nomor: "UM-013",
+    "no_mr": "00013",
+    "nama_kk": "Tedi",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:08:24",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2e22d92934cdb2400cb9"),
+    nomor: "UM-014",
+    "no_mr": "00014",
+    "nama_kk": "Surya",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:08:34",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2ebcd92934cdb2400cbc"),
+    nomor: "UM-015",
+    "no_mr": "00015",
+    "nama_kk": "Cimah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:11:08",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f2ecbd92934cdb2400cbd"),
+    nomor: "UM-016",
+    "no_mr": "00016",
+    "nama_kk": "Nurdin",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:11:23",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f304fd92934cdb2400cc0"),
+    nomor: "UM-017",
+    "no_mr": "00017",
+    "nama_kk": "Mursidi",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:17:51",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f3057d92934cdb2400cc1"),
+    nomor: "UM-018",
+    "no_mr": "00018",
+    "nama_kk": "Rina",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:17:59",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f3111d92934cdb2400cc3"),
+    nomor: "UM-019",
+    "no_mr": "00019",
+    "nama_kk": "Fitria",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:21:05",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("635f31d5d92934cdb2400cc5"),
+    nomor: "UM-020",
+    "no_mr": "00020",
+    "nama_kk": "Lia",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-10-31",
+    jam: "02:24:21",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372efe98becc5110958bd70"),
+    nomor: "UM-001",
+    "no_mr": "00021",
+    "nama_kk": "Catur",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:48:25",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f0358becc5110958bd72"),
+    nomor: "UM-002",
+    "no_mr": "00022",
+    "nama_kk": "Andriyansah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:49:41",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f0938becc5110958bd74"),
+    nomor: "UM-003",
+    "no_mr": "00023",
+    "nama_kk": "Sanum",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:51:15",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f0a38becc5110958bd76"),
+    nomor: "UM-004",
+    "no_mr": "00024",
+    "nama_kk": "Yuni",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:51:31",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f13b8becc5110958bd78"),
+    nomor: "UM-005",
+    "no_mr": "00025",
+    "nama_kk": "Azka",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:54:03",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f1808becc5110958bd7a"),
+    nomor: "UM-006",
+    "no_mr": "00026",
+    "nama_kk": "Arkana",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:55:12",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f1ff8becc5110958bd7c"),
+    nomor: "UM-007",
+    "no_mr": "00027",
+    "nama_kk": "Ulfia",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:57:19",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f2318becc5110958bd7e"),
+    nomor: "UM-008",
+    "no_mr": "00028",
+    "nama_kk": "Nurhayati",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:58:09",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f26a8becc5110958bd80"),
+    nomor: "UM-009",
+    "no_mr": "00029",
+    "nama_kk": "Nurul",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "01:59:06",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f3008becc5110958bd82"),
+    nomor: "UM-010",
+    "no_mr": "00030",
+    "nama_kk": "Syamsi",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:01:36",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f3108becc5110958bd84"),
+    nomor: "UM-011",
+    "no_mr": "00031",
+    "nama_kk": "Pipit",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:01:52",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f3778becc5110958bd86"),
+    nomor: "UM-012",
+    "no_mr": "00032",
+    "nama_kk": "Azura",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:03:35",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f38a8becc5110958bd88"),
+    nomor: "UM-013",
+    "no_mr": "00033",
+    "nama_kk": "Nurlela",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:03:54",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f45e8becc5110958bd8a"),
+    nomor: "UM-014",
+    "no_mr": "00034",
+    "nama_kk": "Zuraidah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:07:26",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f4898becc5110958bd8c"),
+    nomor: "UM-015",
+    "no_mr": "00035",
+    "nama_kk": "Indri",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:08:09",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f5b38becc5110958bd8e"),
+    nomor: "UM-016",
+    "no_mr": "00036",
+    "nama_kk": "Maryani",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:13:07",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f6638becc5110958bd90"),
+    nomor: "UM-017",
+    "no_mr": "00037",
+    "nama_kk": "Sulastri",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:16:03",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f6a48becc5110958bd92"),
+    nomor: "UM-018",
+    "no_mr": "00038",
+    "nama_kk": "Nunu",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:17:08",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f9338becc5110958bd94"),
+    nomor: "UM-019",
+    "no_mr": "00039",
+    "nama_kk": "Suherni",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:28:03",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6372f97f8becc5110958bd96"),
+    nomor: "UM-020",
+    "no_mr": "00040",
+    "nama_kk": "Romjah",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-15",
+    jam: "02:29:19",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637439ad1f6e7e07b3b5b4ff"),
+    nomor: "UM-001",
+    "no_mr": "00041",
+    "nama_kk": "Azka",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:15:25",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("63743c471f6e7e07b3b5b501"),
+    nomor: "UM-002",
+    "no_mr": "00042",
+    "nama_kk": "Sutisna",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:26:31",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("63743cd71f6e7e07b3b5b503"),
+    nomor: "UM-003",
+    "no_mr": "00043",
+    "nama_kk": "Sayanih",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:28:55",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("63743f381f6e7e07b3b5b505"),
+    nomor: "UM-004",
+    "no_mr": "00044",
+    "nama_kk": "Nurdin",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:39:04",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("63743f531f6e7e07b3b5b507"),
+    nomor: "UM-005",
+    "no_mr": "00045",
+    "nama_kk": "Nurhayati",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:39:31",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("63743fc11f6e7e07b3b5b509"),
+    nomor: "UM-006",
+    "no_mr": "00046",
+    "nama_kk": "Nayla",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:41:21",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637440171f6e7e07b3b5b50b"),
+    nomor: "UM-007",
+    "no_mr": "00047",
+    "nama_kk": "Imam",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:42:47",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("6374412f1f6e7e07b3b5b50d"),
+    nomor: "UM-008",
+    "no_mr": "00048",
+    "nama_kk": "Anisa",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:47:27",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637441441f6e7e07b3b5b50f"),
+    nomor: "UM-009",
+    "no_mr": "00049",
+    "nama_kk": "Iqbal",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:47:48",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637441931f6e7e07b3b5b511"),
+    nomor: "UM-010",
+    "no_mr": "00050",
+    "nama_kk": "Siti",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:49:07",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637441a21f6e7e07b3b5b513"),
+    nomor: "UM-011",
+    "no_mr": "00051",
+    "nama_kk": "Mahardika",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:49:22",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637441ea1f6e7e07b3b5b515"),
+    nomor: "UM-012",
+    "no_mr": "00052",
+    "nama_kk": "Riyan",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:50:34",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637442211f6e7e07b3b5b517"),
+    nomor: "UM-013",
+    "no_mr": "00053",
+    "nama_kk": "Anggun",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "01:51:29",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637444241f6e7e07b3b5b519"),
+    nomor: "UM-014",
+    "no_mr": "00054",
+    "nama_kk": "Rizki",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:00:04",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637444631f6e7e07b3b5b51b"),
+    nomor: "UM-015",
+    "no_mr": "00055",
+    "nama_kk": "Ryu",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:01:07",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637445191f6e7e07b3b5b51d"),
+    nomor: "UM-016",
+    "no_mr": "00056",
+    "nama_kk": "Nurlela",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:04:09",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637446301f6e7e07b3b5b51f"),
+    nomor: "UM-017",
+    "no_mr": "00057",
+    "nama_kk": "Noval",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:08:48",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637446811f6e7e07b3b5b521"),
+    nomor: "UM-018",
+    "no_mr": "00058",
+    "nama_kk": "Khorif",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:10:09",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637447071f6e7e07b3b5b523"),
+    nomor: "UM-019",
+    "no_mr": "00059",
+    "nama_kk": "Heri",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:12:23",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+db.getCollection("Kunjungan").insert([ {
+    _id: ObjectId("637449491f6e7e07b3b5b525"),
+    nomor: "UM-020",
+    "no_mr": "00060",
+    "nama_kk": "Rusno",
+    poli: "Poli Umum",
+    status: "Waiting",
+    tanggal: "2022-11-16",
+    jam: "02:22:01",
+    "poli_id": "6343820ccd188f72ab7cbe9c",
+    alamat: "Bogor"
+} ]);
+
+// ----------------------------
+// Collection structure for Pasien
+// ----------------------------
+db.getCollection("Pasien").drop();
+db.createCollection("Pasien");
+
+// ----------------------------
+// Documents of Pasien
+// ----------------------------
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f23f5d92934cdb2400ca1"),
+    nomor: "00001",
+    "no_ktp": "000",
+    nama: "Jenny Raiza",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2002-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f240bd92934cdb2400ca2"),
+    nomor: "00002",
+    "no_ktp": "000",
+    nama: "Yuliyanah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1982-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2426d92934cdb2400ca3"),
+    nomor: "00003",
+    "no_ktp": "000",
+    nama: "Arni",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1967-03-10",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2475d92934cdb2400ca4"),
+    nomor: "00004",
+    "no_ktp": "000",
+    nama: "Talita",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2019-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f269fd92934cdb2400ca6"),
+    nomor: "00005",
+    "no_ktp": "000",
+    nama: "Ratna",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1979-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f270ed92934cdb2400ca8"),
+    nomor: "00006",
+    "no_ktp": "000",
+    nama: "M. Raihan",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1990-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f27bdd92934cdb2400caa"),
+    nomor: "00007",
+    "no_ktp": "000",
+    nama: "Yanti",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1977-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f28cdd92934cdb2400cac"),
+    nomor: "00008",
+    "no_ktp": "000",
+    nama: "Agus",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1985-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2a48d92934cdb2400cae"),
+    nomor: "00009",
+    "no_ktp": "000",
+    nama: "Sadiyaah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1975-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2b30d92934cdb2400cb0"),
+    nomor: "00010",
+    "no_ktp": "000",
+    nama: "Latif",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2015-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2b46d92934cdb2400cb1"),
+    nomor: "00011",
+    "no_ktp": "000",
+    nama: "Hasby",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2022-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2b60d92934cdb2400cb2"),
+    nomor: "00012",
+    "no_ktp": "000",
+    nama: "Romanah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1972-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2df2d92934cdb2400cb6"),
+    nomor: "00013",
+    "no_ktp": "000",
+    nama: "Tedi",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1980-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2e08d92934cdb2400cb7"),
+    nomor: "00014",
+    "no_ktp": "000",
+    nama: "Surya",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1980-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2e86d92934cdb2400cba"),
+    nomor: "00015",
+    "no_ktp": "000",
+    nama: "Cimah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1959-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f2e9bd92934cdb2400cbb"),
+    nomor: "00016",
+    "no_ktp": "000",
+    nama: "Nurdin",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1981-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f3014d92934cdb2400cbe"),
+    nomor: "00017",
+    "no_ktp": "000",
+    nama: "Mursidi",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1968-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f302dd92934cdb2400cbf"),
+    nomor: "00018",
+    "no_ktp": "000",
+    nama: "Rina",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1981-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f3104d92934cdb2400cc2"),
+    nomor: "00019",
+    "no_ktp": "000",
+    nama: "Fitria",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2006-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("635f31c0d92934cdb2400cc4"),
+    nomor: "00020",
+    "no_ktp": "000",
+    nama: "Lia",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1989-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372efe98becc5110958bd6f"),
+    nomor: "00021",
+    "no_ktp": "000",
+    nama: "Catur",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1981-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f0358becc5110958bd71"),
+    nomor: "00022",
+    "no_ktp": "000",
+    nama: "Andriyansah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2004-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f0938becc5110958bd73"),
+    nomor: "00023",
+    "no_ktp": "000",
+    nama: "Sanum",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2021-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f0a38becc5110958bd75"),
+    nomor: "00024",
+    "no_ktp": "000",
+    nama: "Yuni",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1994-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f13b8becc5110958bd77"),
+    nomor: "00025",
+    "no_ktp": "000",
+    nama: "Azka",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2018-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f1808becc5110958bd79"),
+    nomor: "00026",
+    "no_ktp": "000",
+    nama: "Arkana",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2022-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f1ff8becc5110958bd7b"),
+    nomor: "00027",
+    "no_ktp": "000",
+    nama: "Ulfia",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2016-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f2318becc5110958bd7d"),
+    nomor: "00028",
+    "no_ktp": "000",
+    nama: "Nurhayati",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1964-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f26a8becc5110958bd7f"),
+    nomor: "00029",
+    "no_ktp": "000",
+    nama: "Nurul",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1993-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f3008becc5110958bd81"),
+    nomor: "00030",
+    "no_ktp": "000",
+    nama: "Syamsi",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2015-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f3108becc5110958bd83"),
+    nomor: "00031",
+    "no_ktp": "000",
+    nama: "Pipit",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1979-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f3778becc5110958bd85"),
+    nomor: "00032",
+    "no_ktp": "000",
+    nama: "Azura",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2022-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f38a8becc5110958bd87"),
+    nomor: "00033",
+    "no_ktp": "000",
+    nama: "Nurlela",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1984-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f45e8becc5110958bd89"),
+    nomor: "00034",
+    "no_ktp": "000",
+    nama: "Zuraidah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1979-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f4898becc5110958bd8b"),
+    nomor: "00035",
+    "no_ktp": "000",
+    nama: "Indri",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1982-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f5b38becc5110958bd8d"),
+    nomor: "00036",
+    "no_ktp": "000",
+    nama: "Maryani",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1973-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f6638becc5110958bd8f"),
+    nomor: "00037",
+    "no_ktp": "000",
+    nama: "Sulastri",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1962-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f6a48becc5110958bd91"),
+    nomor: "00038",
+    "no_ktp": "000",
+    nama: "Nunu",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1981-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f9338becc5110958bd93"),
+    nomor: "00039",
+    "no_ktp": "000",
+    nama: "Suherni",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1979-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6372f97f8becc5110958bd95"),
+    nomor: "00040",
+    "no_ktp": "000",
+    nama: "Romjah",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1974-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637439ad1f6e7e07b3b5b4fe"),
+    nomor: "00041",
+    "no_ktp": "000",
+    nama: "Azka",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2017-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("63743c471f6e7e07b3b5b500"),
+    nomor: "00042",
+    "no_ktp": "000",
+    nama: "Sutisna",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2007-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("63743cd71f6e7e07b3b5b502"),
+    nomor: "00043",
+    "no_ktp": "000",
+    nama: "Sayanih",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1962-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("63743f381f6e7e07b3b5b504"),
+    nomor: "00044",
+    "no_ktp": "000",
+    nama: "Nurdin",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1967-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("63743f531f6e7e07b3b5b506"),
+    nomor: "00045",
+    "no_ktp": "000",
+    nama: "Nurhayati",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2011-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("63743fc11f6e7e07b3b5b508"),
+    nomor: "00046",
+    "no_ktp": "000",
+    nama: "Nayla",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2016-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637440171f6e7e07b3b5b50a"),
+    nomor: "00047",
+    "no_ktp": "000",
+    nama: "Imam",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1958-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("6374412f1f6e7e07b3b5b50c"),
+    nomor: "00048",
+    "no_ktp": "000",
+    nama: "Anisa",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2021-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637441441f6e7e07b3b5b50e"),
+    nomor: "00049",
+    "no_ktp": "000",
+    nama: "Iqbal",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2014-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637441931f6e7e07b3b5b510"),
+    nomor: "00050",
+    "no_ktp": "000",
+    nama: "Siti",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1980-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637441a21f6e7e07b3b5b512"),
+    nomor: "00051",
+    "no_ktp": "000",
+    nama: "Mahardika",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2016-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637441ea1f6e7e07b3b5b514"),
+    nomor: "00052",
+    "no_ktp": "000",
+    nama: "Riyan",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2020-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637442211f6e7e07b3b5b516"),
+    nomor: "00053",
+    "no_ktp": "000",
+    nama: "Anggun",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2018-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637444241f6e7e07b3b5b518"),
+    nomor: "00054",
+    "no_ktp": "000",
+    nama: "Rizki",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2000-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637444631f6e7e07b3b5b51a"),
+    nomor: "00055",
+    "no_ktp": "000",
+    nama: "Ryu",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2007-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637445191f6e7e07b3b5b51c"),
+    nomor: "00056",
+    "no_ktp": "000",
+    nama: "Nurlela",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1969-01-01",
+    "jenis_kelamin": "F"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637446301f6e7e07b3b5b51e"),
+    nomor: "00057",
+    "no_ktp": "000",
+    nama: "Noval",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "2015-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637446811f6e7e07b3b5b520"),
+    nomor: "00058",
+    "no_ktp": "000",
+    nama: "Khorif",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1969-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637447071f6e7e07b3b5b522"),
+    nomor: "00059",
+    "no_ktp": "000",
+    nama: "Heri",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1997-01-01",
+    "jenis_kelamin": "M"
+} ]);
+db.getCollection("Pasien").insert([ {
+    _id: ObjectId("637449491f6e7e07b3b5b524"),
+    nomor: "00060",
+    "no_ktp": "000",
+    nama: "Rusno",
+    alamat: "Bogor",
+    "tempat_lahir": "Bogor",
+    "tanggal_lahir": "1958-01-01",
+    "jenis_kelamin": "M"
+} ]);
+
+// ----------------------------
+// Collection structure for Poli
+// ----------------------------
+db.getCollection("Poli").drop();
+db.createCollection("Poli");
+
+// ----------------------------
+// Documents of Poli
+// ----------------------------
+db.getCollection("Poli").insert([ {
+    _id: ObjectId("6343820ccd188f72ab7cbe9c"),
+    nama: "Poli Umum",
+    alias: "UM",
+    antrian: "UM-001"
+} ]);
+db.getCollection("Poli").insert([ {
+    _id: ObjectId("63438213cd188f72ab7cbe9d"),
+    nama: "Poli Anak",
+    alias: "AN",
+    antrian: "AN-001"
+} ]);
+db.getCollection("Poli").insert([ {
+    _id: ObjectId("63438222cd188f72ab7cbe9e"),
+    nama: "Poli Gigi",
+    alias: "GI",
+    antrian: "GI-001"
+} ]);
+
+// ----------------------------
+// Collection structure for admin
+// ----------------------------
+db.getCollection("admin").drop();
+db.createCollection("admin");
+
+// ----------------------------
+// Documents of admin
+// ----------------------------
+db.getCollection("admin").insert([ {
+    _id: ObjectId("6343810a058110e4d9f06cbb"),
+    fullname: "admin",
+    email: "ahyo@admin.com",
+    password: "$2b$12$.r7cRblJWH1Q0doHLwN5De6ALyJfAP9mmKYXTZPzx9g5nMAhA1nOO"
+} ]);

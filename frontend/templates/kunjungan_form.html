@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% from 'bootstrap5/form.html' import render_form,
+render_field, render_form_row %} {% from 'bootstrap5/utils.html' import
+render_icon %} {% block content %}
+
+<h3>Kunjungan Pasien</h3>
+<form method="post">
+  {{ form.csrf_token }} {{ render_field(form.tanggal) }} {{
+  render_field(form.no_mr) }} {{ render_field(form.nama_kk) }} {{
+  render_field(form.alamat) }} {{ render_field(form.poli) }} {{
+  render_field(form.submit) }}
+</form>
+<hr />
+<p>List Kunjungan</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Tanggal</td>
+      <td>Jam</td>
+      <td>Poli</td>
+      <td>Pasien</td>
+      <td>Antrian</td>
+      <td>Status</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% if not list_kunjungan %}
+    <tr>
+      <td colspan="7">Belum ada Kunjungan</td>
+    </tr>
+    {% else %} {% for list in list_kunjungan %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{list['tanggal']}}</td>
+      <td>{{list['jam']}}</td>
+      <td>{{list['poli']}}</td>
+      <td>{{list['nama_kk']}}</td>
+      <td>{{list['nomor']}}</td>
+      <td>{{list['status']}}</td>
+    </tr>
+    {% endfor %}{% endif %}
+  </tbody>
+</table>
+{% endblock %}
