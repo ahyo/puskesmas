@@ -17,6 +17,17 @@ async def get_polis():
     }
 
 
+@router.get("/first", response_description="Poli retrieved", response_model=Response)
+async def get_first_poli():
+    poli = await retrieve_one_poli()
+    return {
+        "status_code": 200,
+        "response_type": "success",
+        "description": "Poli data retrieved successfully",
+        "data": poli
+    }
+
+
 @router.get("/{id}", response_description="Poli data retrieved", response_model=Response)
 async def get_poli_data(id: PydanticObjectId):
     poli = await retrieve_poli(id)

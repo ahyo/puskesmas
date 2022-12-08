@@ -311,6 +311,17 @@ def kunjungan():
 
     if form.validate_on_submit():
 
+        # validat no.mr
+        pas = api_get('public/pasien/'+form.no_mr.data)
+        flash(pas)
+        if 'data' in pas:
+            nama_kk = pas['data']['nama']
+            alamat = pas['data']['alamat']
+        else:
+            nama_kk = ''
+            alamat = ''
+            # flash("No.MR tidak valid", "error")
+
         # hit dulu untuk mendapatkan nomor antrian
         tgl = date.today().strftime('%Y-%m-%d')
         jam = waktu.now().strftime('%H:%M:%S')
@@ -319,7 +330,7 @@ def kunjungan():
         resp = api_get('kunjungan/nomor_antrian', data, token)
         # flash(resp)
         nomor = 1
-        if 'data' in resp:
+        if 'data' in resp and len(nama_kk) > 0:
             nomor = resp['data']['nomor']
             alias = resp['data']['alias']
             if not form.poli.data:
@@ -327,9 +338,9 @@ def kunjungan():
             else:
                 cname = dict(choice)[form.poli.data]
 
-            data = {'nomor': nomor, 'no_mr': form.no_mr.data, 'nama_kk': form.nama_kk.data,
+            data = {'nomor': nomor, 'no_mr': form.no_mr.data, 'nama_kk': nama_kk,
                     'tanggal': tgl, 'jam': jam,
-                    'poli_id': form.poli.data, 'poli': cname, 'alias': alias, 'alamat': form.alamat.data}
+                    'poli_id': form.poli.data, 'poli': cname, 'alias': alias, 'alamat': alamat}
             resp = api_post('kunjungan', data, token)
             # flash(resp)
             if 'description' in resp:
@@ -386,9 +397,10 @@ def pasien_add():
         # print(res)
         if 'data' in res:
             nomor = res['data']
-        data = {'nomor': nomor, 'no_ktp': form.no_ktp.data, 'nama': form.nama.data, 'alamat': form.alamat.data, 'tempat_lahir': form.tempat_lahir.data,
+        data = {'nomor': nomor, 'nama': form.nama.data, 'alamat': form.alamat.data, 'tempat_lahir': form.tempat_lahir.data,
                 'tanggal_lahir': form.tanggal_lahir.data.strftime("%Y-%m-%d"), 'jenis_kelamin': form.jenis_kelamin.data}
         resp = api_post('pasien/', data, token)
+        # flash(resp)
         if 'detail' in resp:
             flash(resp['detail'])
         if 'description' in resp:
@@ -400,7 +412,12 @@ def pasien_add():
         if form.add_daftar.data == "Yes":
             tgl = date.today().strftime('%Y-%m-%d')
             jam = waktu.now().strftime('%H:%M:%S')
-            poli_id = "6343820ccd188f72ab7cbe9c"
+            # get first polly
+            #poli_id = "6343820ccd188f72ab7cbe9c"
+            p = api_get('poli/first')
+
+            poli_id = p['data']['_id']
+
             data = {'tanggal': tgl,
                     'poli': poli_id}
             resp = api_get('kunjungan/nomor_antrian', data, token)
@@ -415,7 +432,7 @@ def pasien_add():
                         'tanggal': tgl, 'jam': jam,
                         'poli_id': poli_id, 'poli': cname, 'alias': alias, 'alamat': form.alamat.data}
                 resp = api_post('kunjungan', data, token)
-
+                # flash(resp)
     return render_template('pasien_form.html', form=form)
 
 

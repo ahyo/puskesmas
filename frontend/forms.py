@@ -20,7 +20,7 @@ class RegisterForm(FlaskForm):
 
 class PasienForm(FlaskForm):
     nomor = StringField('Nomor Pasien', default="Otomatis")
-    no_ktp = StringField('No.KTP', validators=[DataRequired(), Length(3, 20)])
+    # no_ktp = StringField('No.KTP', validators=[DataRequired(), Length(3, 20)])
     nama = StringField('Nama Lengkap', validators=[
                        DataRequired(), Length(3, 50)])
     alamat = StringField('Alamat', validators=[DataRequired(), Length(3, 100)])
@@ -70,9 +70,7 @@ class KunjunganForm(FlaskForm):
         if poli_choices:
             self.poli.choices = poli_choices
     no_mr = StringField('No.MR', validators=[DataRequired(), Length(5, 5)])
-    nama_kk = StringField('Nama KK', validators=[
-                          DataRequired(), Length(3, 100)])
-    alamat = StringField('Alamat', validators=[DataRequired(), Length(3, 100)])
+
     poli = SelectField('Poli Yang Dituju', choices=[
                        ('', 'Belum Ada Poli')], validators=[DataRequired()])
     tanggal = HiddenField('Tanggal', default=date.today().strftime("%Y-%m-%d"))

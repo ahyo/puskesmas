@@ -5,8 +5,7 @@ render_icon %} {% block content %}
 <h3>Kunjungan Pasien</h3>
 <form method="post">
   {{ form.csrf_token }} {{ render_field(form.tanggal) }} {{
-  render_field(form.no_mr) }} {{ render_field(form.nama_kk) }} {{
-  render_field(form.alamat) }} {{ render_field(form.poli) }} {{
+  render_field(form.no_mr) }}  {{ render_field(form.poli) }} {{
   render_field(form.submit) }}
 </form>
 <hr />

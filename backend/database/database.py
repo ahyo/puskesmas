@@ -68,6 +68,11 @@ async def retrieve_polis() -> List[Poli]:
     return ret
 
 
+async def retrieve_one_poli() -> Poli:
+    ret = await poli_collection.find().first_or_none()
+    return ret
+
+
 async def add_poli(new_poli: Poli) -> Poli:
     poli = await new_poli.create()
     return poli
@@ -121,8 +126,8 @@ async def retrieve_pasien(id: PydanticObjectId) -> Pasien:
         return pasien
 
 
-async def cek_pasien(params: str) -> Pasien:
-    data = await pasien_collection.find_one(Pasien.nomor == params.nomor)
+async def cek_pasien(nomor: str) -> Pasien:
+    data = await pasien_collection.find_one(Pasien.nomor == nomor)
     return data
 
 

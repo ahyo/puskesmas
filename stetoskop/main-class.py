@@ -168,6 +168,7 @@ def training(X, y):
     history = model.fit(X_train, y_train, validation_data=(
         X_test, y_test), epochs=100, batch_size=200, callbacks=[checkpointer], verbose=1)
 
+    model.summary()
     score = model.evaluate(X_test, y_test, batch_size=60, verbose=0)
     print('Accuracy: {0:.2%}'.format(score[1]/1))
     print("Loss: %.4f\n" % score[0])
@@ -179,7 +180,7 @@ def training(X, y):
     print(history.history['val_loss'])
 
 
-def chart_accuracy():
+def chart_accuracy(history):
     # Plot accuracy and loss graphs
     plt.figure(figsize=(15, 5))
     plt.subplot(1, 2, 1)
@@ -190,7 +191,7 @@ def chart_accuracy():
     plt.show()
 
 
-def chart_loss():
+def chart_loss(history):
     plt.subplot(1, 2, 2)
     plt.title('Loss')
     plt.plot(history.history['loss'], label='training loss')

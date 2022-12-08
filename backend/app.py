@@ -47,8 +47,8 @@ async def websocket_endpoint(websocket: WebSocket):
 
 app.include_router(AdminRouter, tags=["Administrator"], prefix="/admin")
 app.include_router(PublicRouter, tags=["Public"], prefix="/public")
-app.include_router(PoliRouter, tags=[
-                   "Poli"], prefix="/poli", dependencies=[Depends(token_listener)])
+app.include_router(PoliRouter, tags=["Poli"], prefix="/poli")
+#    , dependencies=[Depends(token_listener)])
 app.include_router(PasienRouter, tags=[
                    "Pasien"], prefix="/pasien", dependencies=[Depends(token_listener)])
 app.include_router(PendaftaranRouter, tags=[

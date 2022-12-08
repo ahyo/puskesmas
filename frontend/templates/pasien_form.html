@@ -9,8 +9,7 @@ render_field, render_form_row %} {% block content %}
 
 
 <form method="post">
-  {{ form.csrf_token }} {{ render_field(form.nomor) }} {{
-  render_field(form.no_ktp) }} {{ render_field(form.nama) }} {{
+  {{ form.csrf_token }} {{ render_field(form.nomor) }}  {{ render_field(form.nama) }} {{
   render_field(form.alamat) }} {{ render_field(form.tempat_lahir) }} {{
   render_field(form.tanggal_lahir) }} {{ render_field(form.jenis_kelamin) }} 
   {{ render_field(form.add_daftar) }} 

@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr
 
 class Pasien(Document):
     nomor: str
-    no_ktp: str
+    # no_ktp: str
     nama: str
     alamat: str
     tempat_lahir: str
@@ -17,7 +17,7 @@ class Pasien(Document):
         schema_extra = {
             "example": {
                 "nomor": "P0000000001",
-                "no_ktp": "3471072708810002",
+                # "no_ktp": "3471072708810002",
                 "nama": "Ahyo",
                 "alamat": "Bogor",
                 "tempat_lahir": "Jakarta",
